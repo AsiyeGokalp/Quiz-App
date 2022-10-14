@@ -6,7 +6,7 @@
 
 Quiz App  is a kind of multiple-choice test.
 
-![Page view](./images/pt1.png)
+![Page view](./images/ph1.png)
 
 ---
 
@@ -18,7 +18,7 @@ Quiz App  is a kind of multiple-choice test.
 
 -The user can see which question s/he is in from the Progress bar.
 
-![Page view](./images/pt2.png)
+![Page view](./images/ph2.png)
 
 ---
 
