@@ -1,74 +1,94 @@
-# Getting Started
+# Photon
 
-This repository functions as the basis of the quiz project in the [Browsers module](https://github.com/HackYourFuture/Browsers). Before the first group meeting, have a look through this code and try to understand how it works and how it is organised. We will explain the idea behind the structure below as well as the Backlog (which will identify what is needed to be implemented).
+---
 
-We have already implemented a very basic UI that can go through the questions to show you how this kind of code is split and how you can use the structure to your advantage. Have a look through it before your first group meeting as it can take a little while to get your head around it!
+## How does Photon be used?
 
-## Development
+Photon is a provider of stock phography.
 
-To run this project locally you will need to open `index.html` in your browser using a local server. LiveServer, `http-server`, `study-lenses`, or any other local static server will work.
+- In this project [Pexels API](https://www.pexels.com/api/) is used for images and videos and [Datamuse API](https://www.datamuse.com/api/) is used for words.
 
-## Installing Dependencies
+![Page view](./images/pt1.png)
 
-There are no dependencies needed to run the website, everything is prepared to work with vanilla JavaScript. However, if you want to install prettier for this project then run (generally you always want to do this if you see a `package.json` file):
+---
 
-- `npm install`
+- When the user searches from the search engine, suggest words dropdown in the search engine.
 
-# Structure
+- The User can see her past searches in the dropdown menu.
 
-Instead of writing all code in a single JavaScript file, we want you to split your code over several files.
-The structure of this project is explained in the next video
+- The User can delete the past if she/he wants.
 
-[![Project Structure YouTube Video](https://i.imgur.com/hDcLYFt.png)](https://youtu.be/bysBqtSKBpQ)
+- After searching, at the bottom of the search engine, words with similar meanings to the searched word appear on the recommendation, when clicked, a search is made for that word.
 
-Let's run through the folders:
+![Page view](./images/pt2.png)
+
+---
+
+- By clicking on the photographer's name on the photos, the User can access the photos of that photographer.
+
+- By clicking the hearts on the photos the User can liked them and can collect them on a page. To access the photos, simply User can click on the Liked Photos button.
+
+- By clicking the popular video button, the user can access popular videos.
+
+- By clicking the hearts on the videos User can liked them and can collect them on a page. To access the videos, simply User can click on the Liked Videos button.
+
+- By clicking the Leaderboard button, The user can see the names of the photographers who have shared the most photos.if s/he clicks on the name s/he sees the pictures too
+
+\*The user can zoom in by clicking on the picture.
+
+- More images can be uploaded with the more button
+
+## Demo
+
+Here is a working live demo :[Demo](https://asiyegokalp.github.io/Photon/)
+
+---
+
+## ES6 + Features
+
+- Arrow Functions
+- async/await with try/catch
+- Modules export/import
+- localStorage
+
+---
+
+## Structure
 
 ```
-public
-src
-└── pages
-└── views
-└── app.js
-└── constants.js
-└── data.js
-index.html
+├── images
+│   ├── ph1.png
+│   └── ph2.png
+│
+├── public
+│   └── style.css
+├── src
+│   ├── page
+│   │     ├── autocomplete.js
+│   │     ├── fetchApi.js
+│   │     ├── leaderBoard.js
+│   │     ├── photographer.js
+│   │     ├── popularVideo.js
+│   │     ├── relatedWords.js
+│   │     ├── currentWeather.js
+│   │     └── searched.js
+│   └── view
+│         ├──autocompleteView.js
+│         ├──generatePicture.js
+│         ├──genenerateVideo.js
+│         ├──heartedPicturesView.js
+│         ├──heartedVideosView.js
+│         ├──leaderboardView.js
+│         └──relatedWordsView.js
+│
+├── app.js
+├── index.html
+└── README.md
+
 ```
 
-- `public` this contains the static files that can be used by our `index.html` file
-- `src` this contains all of our JavaScript code
-  - `pages` this folder contains our functions that handle user interactions. You can also see it as the code that processes and updates the data or DOM
-    it also contains our code that links up our handler code to the DOM.
-  - `views` this contains code to define what the DOM will look like. They will create the DOM element and give it back. They should never read from/write to the dom, that is what the pages do.
-  - `app.js` this file our initialisation code. Generally this code should only run once and starts the application
-  - `data.js` this is our data model. Anything we need to store in the browser we place inside the data file
+---
 
-# Goal and Backlog
+## Note
 
-So what should be built? Below is a collection of user stories you can choose from. Stories inside of each priority level are not necessarily in order, it's up to your group to decide how they fit into your strategy. These are also just suggestion, feel free to change them or create your own! Feel free to get creative.
-
-Choose a desired end result at the start of the project.
-By choosing an existing example, the goal of the project will be clear to everyone in the team.
-Another benefit is that it will be easier to come up with the necessary tasks to create your quiz.
-
-Some examples of online quizes that you might like:
-
-- https://wwbm.com/
-- https://www.typeform.com/templates/t/trivia/
-- https://lovattspuzzles.com/online-puzzles-competitions/ultimate-online-trivia-quiz/
-- https://www.lenstore.co.uk/vc/colour-is-in-the-eye-of-the-beholder/#/game
-- https://heywise.com/quiz/lets-find-out-if-you-follow-gordon-ramsay/1/
-
-When you have chosen your goal, you can create tasks as issues on Github and assign them to team members.
-Tasks could look like this, using the [MoSCoW](https://en.wikipedia.org/wiki/MoSCoW_method) labels for prioritization
-
-- [x] (must have) A user can see one question at a time, stepping through the quiz
-- [ ] (must have) A user can select an answer for each question
-- [ ] (must have) Change the <title>
-- [ ] (must have) add a favicon
-- [ ] (should have) A user can see what the correct answer is after they selected their answer.
-- [ ] (should have) A user can see their score update in real-time as they select answers
-- [ ] (should have) A user can refresh the page and still have his/her given answers available
-- [ ] (could have) A user can "skip" the question and learn the correct answer, this forfeits the question
-- [ ] (could have) Transition between pages or question look fancy like TypeForm for example
-
-You should create tasks that fit with your goal, these tasks serve just as an example.
+The browser prevents downloading anything from different servers' APIs for security reasons. Pexels API was used to create this project, in this case Photos cannot be downloaded.
