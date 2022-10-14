@@ -29,7 +29,7 @@ Quiz App  is a kind of multiple-choice test.
 
 ## Demo
 
-Here is a working live demo :[Demo](https://asiyegokalp.github.io/Photon/)
+Here is a working live demo :[Demo](https://asiyegokalp.github.io/Quiz-App/)
 
 ---
 
